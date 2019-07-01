@@ -1,10 +1,9 @@
 #!/bin/bash
 # Run the scan
-./scan.sh
 
 cd website
 bundle install
-bundle exec jekyll build
+bundle exec jekyll build --destination _site
 
 if ([ $TRAVIS_BRANCH == "travis" ] && [ $TRAVIS_PULL_REQUEST == "false" ]); then
   cd _site

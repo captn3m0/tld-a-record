@@ -17,10 +17,13 @@ before_install:
   - ssh-add deploy-key
   - git config user.name "TLD List Bot"
   - git config user.email "tld-bot@captnemo.in"
-# Assume bundler is being used, therefore
-# the `install` step will run `bundle install` by default.
-script: ./ci.sh
-
+script:
+  - wget "https://data.iana.org/TLD/tlds-alpha-by-domain.txt" --output-document tlds.txt
+  - ./scan.sh
+  - curl 'https://ipapi.co/yaml/' > website/_data/ip.json
+  - echo "This scan was last run on $(date)" >> template.md
+  - cp tlds.txt template.md website/
+  - ./ci.sh
 # branch whitelist, only for GitHub Pages
 branches:
   except:
