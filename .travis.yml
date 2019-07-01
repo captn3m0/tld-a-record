@@ -1,0 +1,28 @@
+language: ruby
+env:
+  global:
+  - GIT_REMOTE: git@github.com:captn3m0/tld-a-record.git
+addons:
+  apt:
+    packages:
+    # required to avoid SSL errors
+    - libcurl4-openssl-dev
+    - dnsutils
+rvm:
+- 2.4.1
+before_install:
+  - openssl aes-256-cbc -K $encrypted_9e883639804e_key -iv $encrypted_9e883639804e_iv -in deploy-key.enc -out deploy-key -d
+  - chmod 600 deploy-key
+  - eval `ssh-agent -s`
+  - ssh-add deploy-key
+  - git config user.name "TLD List Bot"
+  - git config user.email "tld-bot@captnemo.in"
+# Assume bundler is being used, therefore
+# the `install` step will run `bundle install` by default.
+script: ./ci.sh
+
+# branch whitelist, only for GitHub Pages
+branches:
+  except:
+  # gh-pages is automatically committed
+  - gh-pages
