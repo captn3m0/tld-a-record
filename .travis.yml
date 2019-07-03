@@ -8,6 +8,7 @@ addons:
     # required to avoid SSL errors
     - libcurl4-openssl-dev
     - dnsutils
+    - idn
 rvm:
 - 2.4.1
 before_install:
