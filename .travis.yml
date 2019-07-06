@@ -26,7 +26,8 @@ script:
   - ./scan.sh
   - curl 'https://ipapi.co/yaml/' > website/_data/ip.json
   - echo "This scan was last run on $(date)" >> template.md
-  - cp tlds.txt template.md website/
+  - cp tlds.txt website/
+  - cp template.md website/index.md
   - ./ci.sh
 # branch whitelist, only for GitHub Pages
 branches:
