@@ -22,6 +22,5 @@ done
 
 curl 'https://ipapi.co/yaml/' > website/_data/ip.json
 
+echo >> template.md
 echo "This scan was last run on $(date)" >> template.md
-
-cp tlds.txt template.md website/
