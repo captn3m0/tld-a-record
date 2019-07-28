@@ -6,7 +6,8 @@ IFS=$'\n\t'
 
 cd website
 bundle install
-bundle exec jekyll build --destination _site
+bundle show
+bundle exec jekyll build --verbose --destination _site
 
 if ([ $TRAVIS_BRANCH == "travis" ] && [ $TRAVIS_PULL_REQUEST == "false" ]); then
   cd _site
