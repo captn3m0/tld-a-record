@@ -1,8 +1,9 @@
 email: tld@captnemo.in
 baseurl: "/tld-a-record" # the subpath of your site, e.g. /blog
 url: "https://captnemo.in" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: captn3m0
-github_username:  captn3m0
+site:
+  github:
+    repository_url: https://github.com/captn3m0/tld-a-record/
 title: TLDs with A Records
 description: List of TLDs with A Records
 markdown: kramdown
