@@ -9,7 +9,7 @@ bundle install
 bundle show
 bundle exec jekyll build --verbose --destination _site
 
-if ([ $TRAVIS_BRANCH == "travis" ] && [ $TRAVIS_PULL_REQUEST == "false" ]); then
+if ([ $TRAVIS_BRANCH == "master" ] && [ $TRAVIS_PULL_REQUEST == "false" ]); then
   cd _site
   git init
   git remote add origin "$GIT_REMOTE"
