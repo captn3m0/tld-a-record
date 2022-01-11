@@ -1,2 +1,10 @@
 tlds.txt
 deploy-key
+
+tld/*.txt
+whois/*.txt
+.idea/
+__pypackages__
+.pdm.toml
+website/root.zone.txt
+template.md
